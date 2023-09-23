@@ -1,0 +1,11 @@
+input,
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+.books {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
