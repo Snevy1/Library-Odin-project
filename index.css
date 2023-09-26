@@ -76,7 +76,7 @@ input[type="submit"] {
 .books {
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   position: absolute;
   top: 10rem;
