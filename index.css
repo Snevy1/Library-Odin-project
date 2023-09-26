@@ -19,11 +19,11 @@ body {
 
 .form {
   position: absolute;
-  top: 6rem;
-  left: 40%;
-  background: #daf3f3;
+  top: 10rem;
+  left: 10rem;
+  background: #6470b4;
   padding: 2rem;
-  width: 22%;
+  width: 300px;
   height: 60vh;
   border-radius: 15px;
   display: none;
@@ -114,4 +114,25 @@ input[type="submit"] {
 
 .rmv {
   background: #e54140;
+}
+
+@media screen and (min-width: 700px) {
+  .form {
+    left: 20rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .form {
+    left: 30rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .form {
+    left: 40rem;
+  }
+
+  input[type="text"] {
+    margin-top: 1rem;
+  }
 }
