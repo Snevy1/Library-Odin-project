@@ -47,9 +47,9 @@ function addToLibrary() {
 
   myBooks.map((book) => {
     let eachbook = `<article class="book">
-    <h2>${book.title}</h2>
-    <h2>${book.author}</h2>
-    <h2>${book.pages}</h2>
+    <h2>Title: ${book.title}</h2>
+    <h2>Author: ${book.author}</h2>
+    <h2>Pages: ${book.pages}</h2>
     <button class="article_btn read-status">Read</button>
     <button class="article_btn rmv">Remove book</button>
     </article>`;
