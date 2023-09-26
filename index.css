@@ -1,11 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: #daf3f3;
+
+  max-width: 100%;
+}
+
+.form {
+  position: absolute;
+  top: 6rem;
+  left: 40%;
+  background: #daf3f3;
+  padding: 2rem;
+  width: 22%;
+  height: 60vh;
+  border-radius: 15px;
+  display: none;
+}
+
 input,
 label {
   display: block;
   margin-top: 1rem;
 }
 
+input[type="text"] {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  font-family: inherit;
+  border: none;
+}
+input[type="submit"] {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 5px;
+  background: #14e4ed;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: larger;
+  border: none;
+}
+
+.btn {
+  position: absolute;
+  top: 2rem;
+  left: 15rem;
+  width: 20%;
+  padding: 1.5rem;
+  background: #14e4ed;
+  border-radius: 15px;
+  font-size: larger;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  border: transparent;
+}
+
+.display_form {
+  display: block;
+  z-index: 1;
+}
+
 .books {
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 400px);
+  gap: 15px;
+  position: absolute;
+  top: 10rem;
+  margin-left: 2rem;
+}
+
+.books article {
+  background: #fdfdfd;
+  border-radius: 15px;
+
+  padding: 4rem;
+  height: auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.books article h2 {
+  margin: 1rem;
+}
+
+.article_btn {
+  padding: 0.7rem;
+  width: 100%;
+  font-family: inherit;
+  font-size: larger;
+  font-weight: 400;
+  margin: 1rem;
+  background: #88e944;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.rmv {
+  background: #e54140;
 }

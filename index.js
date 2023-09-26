@@ -1,4 +1,8 @@
 const myBooks = [];
+let books = document.querySelector(".books");
+let addBtn = document.querySelector(".btn");
+let form = document.querySelector("#form");
+let formSection = document.querySelector(".form");
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -10,23 +14,22 @@ function Book(title, author, pages, read) {
   };
 }
 
-const book1 = new Book(
-  "Democrat party hates America",
-  "Mark R Levin",
-  80,
-  "yes"
-);
-const book2 = new Book("Elon Musk", "Walter", 70, "yes");
-const book3 = new Book("The shadow work journal", "Keila Shaheen", 50, "no");
-myBooks.push(book1);
-myBooks.push(book2);
-myBooks.push(book3);
+addBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  formSection.classList.add("display_form");
 
-document.querySelector("#form").addEventListener("submit", getBook);
+  //addBtn.style.display = "none";
+});
+
+form.addEventListener("submit", getBook);
 
 function getBook(event) {
   event.preventDefault();
+  books.innerHTML = "";
+  formSection.classList.remove("display_form");
+
   addToLibrary();
+  form.reset();
 }
 
 function bookInfo() {
@@ -37,21 +40,54 @@ function bookInfo() {
   return newBook;
 }
 
+console.log(bookInfo());
+
 function addToLibrary() {
   myBooks.push(bookInfo());
-  console.log(myBooks);
-}
 
-function displayBooks() {
   myBooks.map((book) => {
-    let books = document.querySelector(".books");
-    let eachbook = `<article>
+    let eachbook = `<article class="book">
     <h2>${book.title}</h2>
     <h2>${book.author}</h2>
     <h2>${book.pages}</h2>
+    <button class="article_btn read-status">Read</button>
+    <button class="article_btn rmv">Remove book</button>
     </article>`;
     books.innerHTML += eachbook;
+
+    //Removing a book
+
+    let rmvBtn = document.querySelector(".rmv");
+    rmvBtn.addEventListener("click", () => {
+      document.querySelector(".book").remove();
+    });
+
+    //Toggle Read status
+
+    let readBtn = document.querySelector(".read-status");
+    readBtn.addEventListener("click", () => {
+      readBtn.innerHTML == "Read"
+        ? (readBtn.innerHTML = "NotRead")
+        : (readBtn.innerHTML = "Read");
+    });
   });
 }
 
-displayBooks();
+// Remove and read buttons of the books in the dom already
+const domBook = () => {
+  let rmvBtn = document.querySelector(".rmv");
+  rmvBtn.addEventListener("click", () => {
+    document.querySelector(".book").remove();
+  });
+
+  //Toggle Read status
+
+  let readBtn = document.querySelector(".read-status");
+  readBtn.addEventListener("click", () => {
+    readBtn.innerHTML == "Read"
+      ? (readBtn.innerHTML = "NotRead")
+      : (readBtn.innerHTML = "Read");
+  });
+};
+
+domBook();

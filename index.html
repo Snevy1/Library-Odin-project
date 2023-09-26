@@ -8,12 +8,16 @@
     <script src="index.js" defer></script>
   </head>
   <body>
-    <section class="books"></section>
-      <article>
-        <h2>Hey</h2>
+    <section class="books">
+      <article class="book">
+        <h2>Physiology</h2>
+        <h2>Lakati</h2>
+        <h2>78</h2>
+        <button class="article_btn read-status">Read</button>
+        <button class="article_btn rmv">Remove book</button>
       </article>
     </section>
-     <section class="form">
+    <section class="form">
       <form id="form" method="post">
         <label for="title">Title</label>
         <input type="text" name="title" id="title" />
@@ -23,6 +27,7 @@
         <input type="text" name="title" id="pages" />
         <input type="submit" name="title" id="submit" />
       </form>
-    </section> 
+    </section>
+    <input type="button" value="Add Book" class="btn" />
   </body>
 </html>
